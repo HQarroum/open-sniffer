@@ -1,4 +1,4 @@
-![Logo](http://icons.iconarchive.com/icons/hopstarter/puck/256/McAfee-Virus-Scan-icon.png)
+![Logo](http://www.ronedmondson.com/wp-content/uploads/2010/02/vacuum.jpg)
 
 # Sniffy
 
