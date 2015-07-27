@@ -1,6 +1,6 @@
-![Logo](http://thumbs.dreamstime.com/x/detective-dog-clipart-picture-cartoon-character-55315368.jpg)
+![Logo](http://icons.iconarchive.com/icons/hopstarter/puck/256/McAfee-Virus-Scan-icon.png)
 
-# libsniffy
+# Sniffy
 
 A POSIX utility used to sniff and dissect network packets.
 
