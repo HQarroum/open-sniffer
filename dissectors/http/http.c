@@ -104,25 +104,25 @@ static int on_body(_UNUSED_ http_parser* parser, _UNUSED_ const char* at, size_t
 
 static int on_status(_UNUSED_ http_parser* parser, const char* at, size_t length)
 {
-  printf("Response status : %.*s\n", length, at);
+  printf("Response status : %.*s\n", (int) length, at);
   return (0);
 }
 
 static int on_url(http_parser* parser, const char* at, size_t length)
 {
-  printf("%s %.*s\n", http_method_from_id(parser->method), length, at);
+  printf("%s %.*s\n", http_method_from_id(parser->method), (int) length, at);
   return (0);
 }
 
 static int on_header_field(_UNUSED_ http_parser* parser, const char* at, size_t length)
 {
-  printf("%.*s: ", length, at);
+  printf("%.*s: ", (int) length, at);
   return (0);
 }
 
 static int on_header_value(_UNUSED_ http_parser* parser, const char* at, size_t length)
 {
-  printf("%.*s\n", length, at);
+  printf("%.*s\n", (int) length, at);
   return (0);
 }
 
