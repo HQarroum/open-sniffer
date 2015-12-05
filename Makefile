@@ -1,6 +1,6 @@
-CC ?= gcc
+CC = gcc
 
-APP ?= sniffy
+APP = sniffy
 
 # Holds a list of every source file in the `dissectors` folder.
 DISSECTORS_SRC = $(shell find dissectors/ -name '*.c')
@@ -13,7 +13,7 @@ SRC = app.c \
 	utils/inaddr.c \
 	$(DISSECTORS_SRC)
 
-CFLAGS ?= -std=c99 -D_BSD_SOURCE -W -Wall # -Werror -O2
+CFLAGS = -std=c99 -D_BSD_SOURCE -W -Wall -Werror -O2
 
 LDFLAGS = -L./circular-linked-list -lcircular-linked-list
 
