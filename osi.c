@@ -91,18 +91,21 @@ void osi_register_dissector(osi_stack_t* stack, const osi_dissector_t* dissector
 const osi_dissector_t* osi_find_dissector_by_packet(const osi_stack_t* stack, const packet_t* packet, osi_layer_t layer)
 {
   node_t*		  node;
+  const list_t*		  list;
   osi_packet_layer_pair_t pair = {
     .packet = packet,
     .layer  = layer
   };
-  
-  node = list_find_node_if(&(stack->dissectors), find_dissector_by_packet, &pair);
+
+  list = &(stack->dissectors);
+  node = list_find_node_if(list, find_dissector_by_packet, &pair);
   return (node ? node->element : NULL);
 }
 
 const osi_dissector_t* osi_find_dissector_by_name(const osi_stack_t* stack, const char* name)
 {
-  node_t* node = list_find_node_if(&(stack->dissectors), find_dissector_by_name, name);
+  const list_t* list = &(stack->dissectors);
+  node_t* node	     = list_find_node_if(list, find_dissector_by_name, (void*) name);
   
   return (node ? node->element : NULL);
 }
