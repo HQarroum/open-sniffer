@@ -28,7 +28,6 @@
   "-------------------------------------------------------\n"	\
   COLOR_END
 
-
 /**
  * \brief Definition of a DNS packet header.
  */
