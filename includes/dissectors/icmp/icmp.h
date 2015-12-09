@@ -1,11 +1,11 @@
 #ifndef ICMP_H
 #define ICMP_H
 
-#include "../../osi.h"
-#include "../../termcaps.h"
-#include "../../app.h"
 #include <linux/icmp.h>
 #include <stdio.h>
+#include <osi.h>
+#include <termcaps.h>
+#include <app.h>
 
 #define ICMP_TYPE_UNKNOWN "ICMP_TYPE_UNKNOWN"
 

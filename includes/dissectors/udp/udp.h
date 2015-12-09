@@ -1,11 +1,11 @@
 #ifndef UDP_H
 #define UDP_H
 
-#include "../../osi.h"
-#include "../../termcaps.h"
-#include "../../app.h"
-#include <linux/udp.h>
 #include <stdio.h>
+#include <linux/udp.h>
+#include <osi.h>
+#include <termcaps.h>
+#include <app.h>
 
 #define UDP_OUTPUT_HEADER \
   COLOR_BEGIN(RED,    \

@@ -1,11 +1,11 @@
 #ifndef HTTP_H
 #define HTTP_H
 
-#include "../../osi.h"
-#include "../../termcaps.h"
-#include "../../app.h"
-#include "http-parser.h"
 #include <stdio.h>
+#include <osi.h>
+#include <termcaps.h>
+#include <app.h>
+#include "http-parser.h"
 
 #define HTTP_OUTPUT_HEADER \
   COLOR_BEGIN(LIGHT_MAGENTA,			    \

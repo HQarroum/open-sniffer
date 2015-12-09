@@ -1,10 +1,10 @@
 #ifndef IP_H
 #define IP_H
 
-#include "../../osi.h"
-#include "../../termcaps.h"
 #include <stdio.h>
 #include <netinet/ip.h>
+#include <osi.h>
+#include <termcaps.h>
 
 #define IP_OUTPUT_HEADER \
   COLOR_BEGIN(GREEN,					    \

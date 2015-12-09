@@ -1,11 +1,11 @@
 #ifndef DNS_H
 #define DNS_H
 
-#include "../../osi.h"
-#include "../../termcaps.h"
-#include "../../utils/inaddr.h"
 #include <stdio.h>
 #include <inttypes.h>
+#include <osi.h>
+#include <termcaps.h>
+#include <utils/inaddr.h>
 
 // DNS structures and macros.
 #include <arpa/nameser.h>

@@ -1,12 +1,12 @@
 #ifndef ARP_H
 #define ARP_H
 
-#include "../../osi.h"
-#include "../../termcaps.h"
-#include "../../app.h"
-#include "../../utils/inaddr.h"
-#include <netinet/if_ether.h>
 #include <stdio.h>
+#include <osi.h>
+#include <termcaps.h>
+#include <app.h>
+#include <utils/inaddr.h>
+#include <netinet/if_ether.h>
 
 #define ARP_OUTPUT_HEADER \
   COLOR_BEGIN(YELLOW,					    \

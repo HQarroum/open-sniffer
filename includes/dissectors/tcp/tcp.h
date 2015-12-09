@@ -1,11 +1,11 @@
 #ifndef TCP_H
 #define TCP_H
 
-#include "../../osi.h"
-#include "../../termcaps.h"
-#include "../../app.h"
 #include <linux/tcp.h>
 #include <stdio.h>
+#include <osi.h>
+#include <termcaps.h>
+#include <app.h>
 
 #define TCP_OUTPUT_HEADER \
   COLOR_BEGIN(CYAN,						\

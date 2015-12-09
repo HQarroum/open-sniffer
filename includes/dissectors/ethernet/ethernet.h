@@ -1,10 +1,10 @@
 #ifndef ETHERNET_H
 #define ETHERNET_H
 
-#include "../../osi.h"
-#include "../../termcaps.h"
-#include "../../utils/inaddr.h"
 #include <stdio.h>
+#include <osi.h>
+#include <termcaps.h>
+#include <utils/inaddr.h>
 
 #define ETHERNET_OUTPUT_HEADER \
   COLOR_BEGIN(BLUE,					    \
