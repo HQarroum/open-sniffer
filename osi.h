@@ -54,21 +54,21 @@ typedef enum osi_layer_t
 } osi_layer_t;
 
 /**
- * \brief Declaration of the `osi_dissector_handles_t` type used to
+ * Declaration of the `osi_dissector_handles_t` type used to
  * implement a callback in dissectors stating whether they can handle
  * the received packet.
  */
 typedef int		(*osi_dissector_handles_t)(const packet_t* packet);
 
 /**
- * \brief Declaration of the `osi_dissector_decapsulate_t` type used to
+ * Declaration of the `osi_dissector_decapsulate_t` type used to
  * implement a callback in dissectors taking a packet as an input and returning
  * a decapsulated packet ready to be forwarded to the next `osi_layer_t`.
  */
 typedef packet_t*	(*osi_dissector_decapsulate_t)(const packet_t* packet);
 
 /**
- * \brief Declaration of the `osi_dissector_dump_t` type used to
+ * Declaration of the `osi_dissector_dump_t` type used to
  * implement a callback in dissectors which outputs informations
  * about the given packet.
  */
@@ -93,9 +93,9 @@ typedef struct osi_dissector_operations_t
  */
 typedef struct osi_dissector_t
 {
-  osi_layer_t			layer;
-  osi_dissector_operations_t	operations;
-  const char*			name;
+  osi_layer_t	layer;
+  osi_dissector_operations_t operations;
+  const char*	name;
 } osi_dissector_t;
 
 /**
@@ -143,7 +143,7 @@ typedef struct osi_packet_layer_pair_t
 osi_stack_t		osi_stack_new();
 
 /**
- * @brief Clears the dissector list maintained
+ * \brief Clears the dissector list maintained
  * by the given `stack`.
  */
 void			osi_stack_clear(osi_stack_t* stack);
