@@ -28,13 +28,13 @@ const osi_dissector_t* ethernet_dissector_new();
  * given packet.
  * \see osi_dissector_t
  */
-int			  ethernet_dissector_handles(const packet_t* packet);
+int       ethernet_dissector_handles(const packet_t* packet);
 
 /**
  * \brief Dumps the given packet on the standard output.
  * \see osi_dissector_t
  */
-void			ethernet_dissector_dump(const packet_t* packet);
+void      ethernet_dissector_dump(const packet_t* packet);
 
 /**
  * \brief Removes the bytes related to Ethernet in the given packet.
