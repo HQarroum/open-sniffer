@@ -1,5 +1,5 @@
-#ifndef _SYNC_READER_H_
-# define _SYNC_READER_H_
+#ifndef SYNC_READER_H
+#define SYNC_READER_H
 
 #include <stdint.h>
 #include <stdlib.h>
@@ -30,9 +30,9 @@ typedef void (*packet_callback_t)(const struct sync_reader_t* reader, const pack
  * `callbacks`	: An array of packet listeners.
  */
 typedef struct sync_reader_t {
-  int			fd;
-  list_t		callback_list;
-  list_t		interceptor_list;
+  int       fd;
+  list_t    callback_list;
+  list_t    interceptor_list;
 } sync_reader_t;
 
 /**
@@ -40,18 +40,18 @@ typedef struct sync_reader_t {
  * reader, and a pointer to a packet.
  */
 typedef struct sync_reader_pack_t {
-  const sync_reader_t*	reader;
-  const packet_t*	packet;
+  const sync_reader_t*reader;
+  const packet_t* packet;
 } sync_reader_pack_t;
 
 /**
  * \brief Creates a new sync reader.
  */
 sync_reader_t	sync_reader_create(int fd);
-void		sync_reader_add_packet_callback(sync_reader_t* reader, packet_callback_t callback);
-void		sync_reader_remove_packet_callback(sync_reader_t* reader, packet_callback_t callback);
-void		sync_reader_add_packet_interceptor(sync_reader_t* reader, packet_interceptor_t interceptor);
-void		sync_reader_remove_packet_interceptor(sync_reader_t* reader, packet_interceptor_t interceptor);
-ssize_t		sync_reader_read(sync_reader_t* reader, size_t len);
+void     sync_reader_add_packet_callback(sync_reader_t* reader, packet_callback_t callback);
+void     sync_reader_remove_packet_callback(sync_reader_t* reader, packet_callback_t callback);
+void     sync_reader_add_packet_interceptor(sync_reader_t* reader, packet_interceptor_t interceptor);
+void     sync_reader_remove_packet_interceptor(sync_reader_t* reader, packet_interceptor_t interceptor);
+ssize_t  sync_reader_read(sync_reader_t* reader, size_t len);
 
 #endif
