@@ -1,5 +1,5 @@
-#ifndef _DNS_H_
-# define _DNS_H_
+#ifndef DNS_H
+#define DNS_H
 
 #include "../../osi.h"
 #include "../../termcaps.h"
@@ -11,11 +11,11 @@
 #include </usr/include/arpa/nameser.h>
 
 // The maximum size allocated to a domain name.
-#define MAX_NAME_LENGTH			256
+#define MAX_NAME_LENGTH           256
 
 // DNS packet types.
-#define DNS_PACKET_TYPE_QUERY		"QUERY"
-#define DNS_PACKET_TYPE_RESPONSE	"RESPONSE"
+#define DNS_PACKET_TYPE_QUERY     "QUERY"
+#define DNS_PACKET_TYPE_RESPONSE  "RESPONSE"
 
 #define DNS_OUTPUT_HEADER \
   COLOR_BEGIN(LIGHT_BLUE, \
@@ -29,6 +29,9 @@
   COLOR_END
 
 
+/**
+ * \brief Definition of a DNS packet header.
+ */
 typedef struct dnshdr {
   unsigned        id :16;         /*%< query identification number */
 #if BYTE_ORDER == BIG_ENDIAN
@@ -96,14 +99,26 @@ typedef struct	dns_resource_record {
 /**
  * \brief Creates a new DNS dissector.
  */
-const osi_dissector_t*		dns_dissector_new();
+const osi_dissector_t* dns_dissector_new();
 
 /**
  * \brief States whether the DNS dissector can handle
  * the given packet.
+ * \see osi_dissector_t
  */
-int				dns_dissector_handles(const packet_t* packet);
-void				dns_dissector_dump(const packet_t* packet);
-packet_t*			dns_dissector_decapsulate(const packet_t* packet);
+int       dns_dissector_handles(const packet_t* packet);
+
+/**
+ * \brief Dumps the given packet on the standard output.
+ * \see osi_dissector_t
+ */
+void      dns_dissector_dump(const packet_t* packet);
+
+/**
+ * \brief Removes the bytes related to DNS in the given packet.
+ * \return a pointer to a packet with every bytes related to
+ * the DNS segment removed
+ */
+packet_t* dns_dissector_decapsulate(const packet_t* packet);
 
 #endif
