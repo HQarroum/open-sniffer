@@ -1,5 +1,5 @@
-#ifndef _IP_H_
-# define _IP_H_
+#ifndef IP_H
+#define IP_H
 
 #include "../../osi.h"
 #include "../../termcaps.h"
