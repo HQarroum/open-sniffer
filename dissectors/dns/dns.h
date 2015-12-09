@@ -8,7 +8,7 @@
 #include <inttypes.h>
 
 // DNS structures and macros.
-#include </usr/include/arpa/nameser.h>
+#include <arpa/nameser.h>
 
 // The maximum size allocated to a domain name.
 #define MAX_NAME_LENGTH           256
