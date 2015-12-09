@@ -85,7 +85,7 @@ void osi_dump_packet(const osi_stack_t* stack, const packet_t* packet)
 
 void osi_register_dissector(osi_stack_t* stack, const osi_dissector_t* dissector)
 {
-  list_push_back(&(stack->dissectors), dissector);
+  list_push_back(&(stack->dissectors), (void*) dissector);
 }
 
 const osi_dissector_t* osi_find_dissector_by_packet(const osi_stack_t* stack, const packet_t* packet, osi_layer_t layer)
