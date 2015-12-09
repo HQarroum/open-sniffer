@@ -21,17 +21,21 @@ const osi_dissector_t* tcp_dissector_new()
 
 static const char* tcp_dissector_get_packet_type(const struct tcphdr* header)
 {
-  if (header->fin) {
-    return ("FIN");
-  } else if (header->rst) {
-    return ("RST");
-  } else if (header->psh) {
-    return ("PSH");
-  } else if (header->syn) {
-    return ("SYN");
-  } else {
-    return (NULL);
+  static char type[21];
+
+  memset(type, 0, sizeof(type));
+  if (TCP_HAS_FLAG(header, FIN)) {
+    strcat(type, "FIN ");
+  } else if (TCP_HAS_FLAG(header, RST)) {
+    strcat(type, "RST ");
+  } else if (TCP_HAS_FLAG(header, PSH)) {
+    strcat(type, "PSH ");
+  } else if (TCP_HAS_FLAG(header, SYN)) {
+    strcat(type, "SYN ");
+  } else if (TCP_HAS_FLAG(header, ACK)) {
+    strcat(type, "ACK ");
   }
+  return (type);
 }
 
 int tcp_dissector_handles(const packet_t* packet)

@@ -19,6 +19,13 @@
   COLOR_END
 
 /**
+ * Returns whether a TCP header have the given
+ * flag set.
+ */
+#define TCP_HAS_FLAG(header, type) \
+  tcp_flag_word(header) & TCP_FLAG_##type
+
+/**
  * \brief Creates a new TCP dissector.
  * \return an instance of a dissector
  */
