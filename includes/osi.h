@@ -4,7 +4,7 @@
 #include "io.h"
 #include "app.h"
 #include "termcaps.h"
-#include "circular-linked-list/linked-list.h"
+#include <linked-list.h>
 
 #define OSI_PACKET_NOT_SUPPORTED	0
 #define OSI_PACKET_SUPPORTED		1

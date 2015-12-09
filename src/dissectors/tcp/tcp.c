@@ -1,4 +1,4 @@
-#include "tcp.h"
+#include <dissectors/tcp/tcp.h>
 
 static const osi_dissector_t tcp = {
   .layer         = OSI_LAYER_3,

@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <string.h>
-#include "circular-linked-list/linked-list.h"
+#include <linked-list.h>
 #include "io.h"
 #include "osi.h"
 #include "app.h"

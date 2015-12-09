@@ -1,4 +1,4 @@
-#include "ip.h"
+#include <dissectors/ip/ip.h>
 
 static const osi_dissector_t ip = {
   .layer         = OSI_LAYER_2,

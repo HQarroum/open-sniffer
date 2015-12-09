@@ -1,4 +1,4 @@
-#include "icmp.h"
+#include <dissectors/icmp/icmp.h>
 
 static const osi_dissector_t icmp = {
   .layer         = OSI_LAYER_3,

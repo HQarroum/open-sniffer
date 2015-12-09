@@ -1,4 +1,4 @@
-#include "arp.h"
+#include <dissectors/arp/arp.h>
 
 static const osi_dissector_t arp = {
   .layer         = OSI_LAYER_2,

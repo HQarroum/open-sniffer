@@ -1,4 +1,4 @@
-#include "dns.h"
+#include <dissectors/dns/dns.h>
 
 static const osi_dissector_t dns = {
   .layer         = OSI_LAYER_7,

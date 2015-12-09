@@ -1,4 +1,4 @@
-#include "ethernet.h"
+#include <dissectors/ethernet/ethernet.h>
 
 static const osi_dissector_t ethernet = {
   .layer         = OSI_LAYER_1,

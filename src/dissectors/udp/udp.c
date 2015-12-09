@@ -1,4 +1,4 @@
-#include "udp.h"
+#include <dissectors/udp/udp.h>
 
 static const osi_dissector_t udp = {
   .layer         = OSI_LAYER_3,

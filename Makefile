@@ -2,18 +2,20 @@ CC = gcc
 
 APP = sniffy
 
-# Holds a list of every source file in the `dissectors` folder.
-DISSECTORS_SRC = $(shell find dissectors/ -name '*.c')
+SRC_DIR = ./src
 
-SRC = app.c \
-	io.c \
-	sync_reader.c \
-	main.c \
-	osi.c \
-	utils/inaddr.c \
+# Holds a list of every source file in the `dissectors` folder.
+DISSECTORS_SRC = $(shell find ./src/dissectors/ -name '*.c')
+
+SRC = $(SRC_DIR)/app.c \
+	$(SRC_DIR)/io.c \
+	$(SRC_DIR)/sync_reader.c \
+	$(SRC_DIR)/main.c \
+	$(SRC_DIR)/osi.c \
+	$(SRC_DIR)/utils/inaddr.c \
 	$(DISSECTORS_SRC)
 
-CFLAGS = -std=c99 -D_BSD_SOURCE -W -Wall -Werror -O2
+CFLAGS = -I./includes -I./circular-linked-list -std=c99 -D_BSD_SOURCE -W -Wall -Werror -O2
 
 LDFLAGS = -L./circular-linked-list -lcircular-linked-list
 

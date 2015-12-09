@@ -32,7 +32,7 @@
  *          requiring mio to depend on util?
  */
 
-#include "inaddr.h"
+#include <utils/inaddr.h>
 
 /**
  * set the address of a struct sockaddr_storage
