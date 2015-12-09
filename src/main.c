@@ -11,6 +11,7 @@
 #include <dissectors/tcp/tcp.h>
 #include <dissectors/http/http.h>
 #include <dissectors/dns/dns.h>
+#include <dissectors/dhcp/dhcp.h>
 
 #define PACKET_SIZE 1024
 
@@ -60,6 +61,7 @@ int main(void)
   osi_register_dissector(&osi_stack, ip_dissector_new());
   osi_register_dissector(&osi_stack, arp_dissector_new());
   osi_register_dissector(&osi_stack, udp_dissector_new());
+  osi_register_dissector(&osi_stack, dhcp_dissector_new());
   osi_register_dissector(&osi_stack, dns_dissector_new());
   osi_register_dissector(&osi_stack, icmp_dissector_new());
   osi_register_dissector(&osi_stack, tcp_dissector_new());
