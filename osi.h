@@ -1,5 +1,5 @@
-#ifndef _OSI_LAYER_H_
-# define _OSI_LAYER_H_
+#ifndef OSI_LAYER_H
+#define OSI_LAYER_H
 
 #include "io.h"
 #include "app.h"
