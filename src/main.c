@@ -42,12 +42,16 @@ void on_new_packet(_UNUSED_ const sync_reader_t* reader, const packet_t* packet)
 
 int main(void)
 {
-  sync_reader_t reader;
-  int		raw_socket;
+  struct sigaction action;
+  sync_reader_t    reader;
+  int		   raw_socket;
   
   // Intercepting a SIGINT.
-  signal(SIGINT, sighandler);
-
+  action.sa_handler = sighandler;
+  action.sa_flags   = SA_NODEFER;
+  sigemptyset(&action.sa_mask);
+  sigaction(SIGINT, &action, NULL);
+  
   // Initializing the OSI stack.
   osi_stack = osi_stack_new();
   
