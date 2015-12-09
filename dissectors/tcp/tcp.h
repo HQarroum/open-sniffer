@@ -1,5 +1,5 @@
-#ifndef _TCP_H_
-# define _TCP_H_
+#ifndef TCP_H
+#define TCP_H
 
 #include "../../osi.h"
 #include "../../termcaps.h"
@@ -18,9 +18,30 @@
   "-------------------------------------------------------\n"	\
   COLOR_END
 
+/**
+ * \brief Creates a new TCP dissector.
+ * \return an instance of a dissector
+ */
 const osi_dissector_t*	tcp_dissector_new();
-int			tcp_dissector_handles(const packet_t* packet);
-void			tcp_dissector_dump(const packet_t* packet);
-packet_t*		tcp_dissector_decapsulate(const packet_t* packet);
+
+/**
+ * \return whether the dissector can handle the
+ * given packet.
+ * \see osi_dissector_t
+ */
+int       tcp_dissector_handles(const packet_t* packet);
+
+/**
+ * \brief Dumps the given packet on the standard output.
+ * \see osi_dissector_t
+ */
+void      tcp_dissector_dump(const packet_t* packet);
+
+/**
+ * \brief Removes the bytes related to TCP in the given packet.
+ * \return a pointer to a packet with every bytes related to
+ * the TCP segment removed
+ */
+packet_t* tcp_dissector_decapsulate(const packet_t* packet);
 
 #endif
