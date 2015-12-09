@@ -19,8 +19,8 @@ void fail(const char* context)
  */
 const char* get_current_time()
 {
-  time_t	rawtime;
-  struct tm*	timeinfo;
+  time_t      rawtime;
+  struct tm*  timeinfo;
 
   time(&rawtime);
   timeinfo = localtime(&rawtime);
