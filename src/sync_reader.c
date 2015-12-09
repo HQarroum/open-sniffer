@@ -1,5 +1,5 @@
-#include "sync_reader.h"
-#include "osi.h"
+#include <sync_reader.h>
+#include <osi.h>
 
 /**
  * \brief A predicate function used to compare whether the

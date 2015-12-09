@@ -1,29 +1,28 @@
-#include "sync_reader.h"
-#include "io.h"
-#include "osi.h"
-#include "app.h"
+#include <sync_reader.h>
+#include <io.h>
+#include <osi.h>
+#include <app.h>
 
-// Dissectors includes
-#include "dissectors/ethernet/ethernet.h"
-#include "dissectors/ip/ip.h"
-#include "dissectors/arp/arp.h"
-#include "dissectors/udp/udp.h"
-#include "dissectors/icmp/icmp.h"
-#include "dissectors/tcp/tcp.h"
-#include "dissectors/http/http.h"
-#include "dissectors/dns/dns.h"
+#include <dissectors/ethernet/ethernet.h>
+#include <dissectors/ip/ip.h>
+#include <dissectors/arp/arp.h>
+#include <dissectors/udp/udp.h>
+#include <dissectors/icmp/icmp.h>
+#include <dissectors/tcp/tcp.h>
+#include <dissectors/http/http.h>
+#include <dissectors/dns/dns.h>
 
 #define PACKET_SIZE 1024
 
 // The OSI stack used in this program.
 static osi_stack_t osi_stack;
 
-// Whether the app is running, can be changed
-// by a received signal.
+// Indicates whether the app is running.
+// Can be modified by signal handler.
 static volatile sig_atomic_t started;
 
 /**
- * @brief Catches SIGINT signals.
+ * \brief Catches SIGINT signals.
  */
 void sighandler(int sig)
 {
@@ -33,7 +32,7 @@ void sighandler(int sig)
 }
 
 /**
- * @brief Called back as soon as a new packet has been read
+ * \brief Called back as soon as a new packet has been read
  * by the `sync_reader_t`.
  */
 void on_new_packet(_UNUSED_ const sync_reader_t* reader, const packet_t* packet)

@@ -1,4 +1,4 @@
-#include "app.h"
+#include <app.h>
 
 /**
  * @brief Exits the program by returning a
