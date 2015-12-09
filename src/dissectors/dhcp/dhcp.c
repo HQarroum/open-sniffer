@@ -98,16 +98,7 @@ void dhcp_dissector_dump(const packet_t* packet)
   printf("CIADDR : %s\n", ip_to_string(header->client_addr));
   printf("YIADDR : %s\n", ip_to_string(header->your_addr));
   printf("SIADDR : %s\n", ip_to_string(header->server_addr));
-  printf("Client address : %s\n",
-	 stringify_hw_addr(header->client_hw_addr));
-	 /*	 header->client_hw_addr[0],
-	 header->client_hw_addr[1],
-	 header->client_hw_addr[2],
-	 header->client_hw_addr[3],
-	 header->client_hw_addr[4],
-	 header->client_hw_addr[5],
-	 header->client_hw_addr[6],
-	 header->client_hw_addr[7]);*/
+  printf("Client address : %s\n", stringify_hw_addr(header->client_hw_addr));
   printf(DHCP_OUTPUT_FOOTER);
 }
 
