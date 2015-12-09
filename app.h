@@ -14,14 +14,14 @@
 #endif
 
 /**
- * @brief Exits the program by returning a
+ * \brief Exits the program by returning a
  * failure. Also dumps the human-readable
  * output of errno.                                                                                                                                                                                                                         
  */
 void fail(const char* context);
 
 /**
- * @return a human-readable string associated
+ * \return a human-readable string associated
  * with the current time. The returned pointer
  * points to a static value, so you must not try
  * to free it.
