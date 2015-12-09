@@ -8,7 +8,7 @@
 #include <utils/inaddr.h>
 
 #define DHCP_OUTPUT_HEADER \
-  COLOR_BEGIN(GREEN,					    \
+  COLOR_BEGIN(LIGHT_CYAN,					    \
     "-------------------------------------------------------\n"		\
     "-------------------  " BOLD("DHCP Header") " ----------------------\n" \
     "-------------------------------------------------------\n"		\

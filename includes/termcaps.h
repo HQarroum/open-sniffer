@@ -24,5 +24,6 @@
 #define CYAN		"\e[36m"
 #define LIGHT_BLUE	"\e[94m"
 #define LIGHT_MAGENTA	"\e[95m"
+#define LIGHT_CYAN	"\e[96m"
 
 #endif
