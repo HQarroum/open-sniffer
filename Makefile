@@ -15,7 +15,7 @@ SRC = $(SRC_DIR)/app.c \
 	$(SRC_DIR)/utils/inaddr.c \
 	$(DISSECTORS_SRC)
 
-CFLAGS = -I./includes -I./circular-linked-list -std=c99 -D_BSD_SOURCE -W -Wall -Werror -O2
+CFLAGS = -I./includes -I./circular-linked-list -std=gnu99 -W -Wall -Werror -O2
 
 LDFLAGS = -L./circular-linked-list -lcircular-linked-list
 
