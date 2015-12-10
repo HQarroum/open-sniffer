@@ -28,7 +28,7 @@ Basically, this sniffer relies on raw sockets (so it requires root priviledges o
 
 ## Building
 
-For now, a simple Makefile is available for building the project, so you simply need to run `make`. Note that you are required to also pull the sole dependency of this project, an implementation of a circular linked list which is packaged as a submodule. The project was built and tested on a Linux 3.13. (64 bits). 
+For now, a simple Makefile is available for building the project, so you simply need to run `make`. Note that you are required to also pull the sole dependency of this project, an implementation of a circular linked list which is packaged as a submodule. The project was built and tested on a Linux 3.13 (64 bits). 
 
 An integration with `CMake` is planned.
 
