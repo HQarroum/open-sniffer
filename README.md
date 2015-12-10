@@ -1,5 +1,5 @@
 <p align="center">
- <img width="400" src="open-sniffer.png" />
+ <img width="340" src="open-sniffer.png" />
 </p>
 
 # Packet sniffer
