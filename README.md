@@ -1,4 +1,4 @@
-![Logo](http://www.ronedmondson.com/wp-content/uploads/2010/02/vacuum.jpg)
+<img width="400" src="open-sniffer.png" />
 
 # Packet sniffer
 
