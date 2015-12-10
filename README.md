@@ -1,4 +1,6 @@
-<img width="400" src="open-sniffer.png" />
+<p align="center">
+ <img width="400" src="open-sniffer.png" />
+</p>
 
 # Packet sniffer
 
