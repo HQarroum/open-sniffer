@@ -1,6 +1,6 @@
 ![Logo](http://www.ronedmondson.com/wp-content/uploads/2010/02/vacuum.jpg)
 
-# Sniffy
+# Packet sniffer
 
 A POSIX utility used to sniff and dissect network packets.
 
