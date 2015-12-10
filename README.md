@@ -20,7 +20,7 @@ Basically, this sniffer relies on raw sockets (so it requires root priviledges o
  - [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol)
  - [DNS](https://en.wikipedia.org/wiki/Domain_Name_System)
  - [Ethernet](https://en.wikipedia.org/wiki/Ethernet)
- - [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) (does not currently support Gzip deflate)
+ - [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
  - [ICMP](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol)
  - [IP](https://en.wikipedia.org/wiki/Internet_Protocol)
  - [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
