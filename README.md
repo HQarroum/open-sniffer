@@ -28,6 +28,12 @@ Basically, this sniffer relies on raw sockets (so it requires root priviledges o
  - [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
  - [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
 
+## Usage
+
+### Capturing all the traffic
+
+The only behaviour implemented by the application for now is to display every packets captured on the network interface in the form of a graphically stacked representations of each OSI layers. To launch the application, simply execute it without argument.
+
 ## Building
 
 For now, a simple Makefile is available for building the project, so you simply need to run `make`. Note that you are required to also pull the sole dependency of this project, an implementation of a circular linked list which is packaged as a submodule. The project was built and tested on a Linux 3.13 (64 bits). 
