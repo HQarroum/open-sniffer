@@ -36,7 +36,7 @@ The only behaviour implemented by the application for now is to display every pa
 
 To illustrate the result I recorded a sniffing session while retrieving the index page of `example.com` in a small screencast. Note that the rate at which the packets are displayed was voluntarily slowed down for the sake of the demonstration.
 
-<img src="screencast.gif" />
+![Screencast](screencast.gif)
 
 ## Building
 
