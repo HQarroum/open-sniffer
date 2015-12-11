@@ -2,7 +2,7 @@
  <img width="340" src="open-sniffer.png" />
 </p>
 
-# Packet sniffer
+# Open sniffer
 
 A POSIX utility used to sniff and dissect network packets.
 
