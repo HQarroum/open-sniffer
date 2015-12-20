@@ -38,11 +38,19 @@ const osi_dissector_t* dhcp_dissector_new()
   return (&dhcp);
 }
 
+/**
+ * \brief Helper returning a human-readable representation
+ * of an IPv4 address.
+ */
 static const char* ip_to_string(uint32_t ip_address)
 {
   return (inet_ntoa(*((struct in_addr*) &ip_address)));
 }
 
+/**
+ * Helper returning a human-readable representation
+ * of a DHCP operation code.
+ */
 static const char* op_to_string(uint8_t op)
 {
   return (op == 1 ? "Request" : "Reply");
@@ -102,6 +110,10 @@ void dhcp_dissector_dump(const packet_t* packet)
   printf(DHCP_OUTPUT_FOOTER);
 }
 
+/**
+ * \note In this implementation, the DHCP dissector will return
+ * NULL.
+ */
 packet_t* dhcp_dissector_decapsulate(_UNUSED_ const packet_t* packet)
 {
   return (NULL);

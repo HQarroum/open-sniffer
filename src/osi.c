@@ -1,7 +1,7 @@
 #include <osi.h>
 
 /**
- * @brief Predicate looking for a dissector handling the given packet.
+ * \brief Predicate looking for a dissector handling the given packet.
  */
 static int find_dissector_by_packet(_UNUSED_ size_t index, node_t* node, void* data)
 {
@@ -13,7 +13,7 @@ static int find_dissector_by_packet(_UNUSED_ size_t index, node_t* node, void* d
 }
 
 /**
- * @brief Predicate looking for a dissector given a name.
+ * \brief Predicate looking for a dissector given a name.
  */
 static int find_dissector_by_name(_UNUSED_ size_t index, node_t* node, void* data)
 {
@@ -24,7 +24,8 @@ static int find_dissector_by_name(_UNUSED_ size_t index, node_t* node, void* dat
 }
 
 /**
- * @brief Creates a new OSI stack.
+ * \brief Creates a new OSI stack.
+ * \return a new instance of an `osi_stack_t`.
  */
 osi_stack_t osi_stack_new()
 {
@@ -34,7 +35,7 @@ osi_stack_t osi_stack_new()
 }
 
 /**
- * @brief Clears the dissector list maintained
+ * \brief Clears the dissector list maintained
  * by the given `stack`.
  */
 void osi_stack_clear(osi_stack_t* stack)
@@ -42,6 +43,13 @@ void osi_stack_clear(osi_stack_t* stack)
   list_clear(&(stack->dissectors));
 }
 
+/**
+ * \brief Dumps the given packet associated with
+ * a given OSI layer.
+ * \return the packet decapsulated by the found
+ * dissector, NULL if no dissectors handled the
+ * packet.
+ */
 packet_t* osi_dump_packet_by_layer(const osi_stack_t* stack, const packet_t* packet, osi_layer_t layer)
 {  
   const osi_dissector_t* dissector = osi_find_dissector_by_packet(stack, packet, layer);
@@ -54,6 +62,14 @@ packet_t* osi_dump_packet_by_layer(const osi_stack_t* stack, const packet_t* pac
   return (p);
 }
 
+/**
+ * \brief Dumps the given packet by recusrively
+ * walking through the OSI stack dissectors and
+ * starting at the given layer.
+ * \param stack the stack to iterate
+ * \param packet the packet to dump
+ * \param layer the layer to start at
+ */
 void osi_dump_packet_recursive(const osi_stack_t* stack, const packet_t* packet, osi_layer_t layer)
 {
   packet_t* p;
@@ -70,6 +86,12 @@ void osi_dump_packet_recursive(const osi_stack_t* stack, const packet_t* packet,
   }
 }
 
+/**
+ * \brief Dumps the given packet by recursively
+ * walking through the OSI stack dissectors.
+ * \param the stack to walk through
+ * \param packet the packet to dump
+ */
 void osi_dump_packet(const osi_stack_t* stack, const packet_t* packet)
 {
   packet_t* p;
@@ -83,11 +105,23 @@ void osi_dump_packet(const osi_stack_t* stack, const packet_t* packet)
   printf(OSI_PACKET_FOOTER);
 }
 
+/**
+ * \brief Registers a new dissector on the OSI stack.
+ * \param stack the stack to register the dissector on
+ * \param dissector the dissector to register
+ */
 void osi_register_dissector(osi_stack_t* stack, const osi_dissector_t* dissector)
 {
   list_push_back(&(stack->dissectors), (void*) dissector);
 }
 
+/**
+ * \brief Finds the first dissector in the stack that
+ * can handle the given packet.
+ * \param stack the stack to iterate on
+ * \param packet the packet you want to find a dissector for
+ * \param layer the layer at which you would like to find a dissector
+ */
 const osi_dissector_t* osi_find_dissector_by_packet(const osi_stack_t* stack, const packet_t* packet, osi_layer_t layer)
 {
   node_t*		  node;
@@ -102,6 +136,10 @@ const osi_dissector_t* osi_find_dissector_by_packet(const osi_stack_t* stack, co
   return (node ? node->element : NULL);
 }
 
+/**
+ * \brief Finds the first dissector associated with
+ * the given name.
+ */
 const osi_dissector_t* osi_find_dissector_by_name(const osi_stack_t* stack, const char* name)
 {
   const list_t* list = &(stack->dissectors);
@@ -133,7 +171,7 @@ void osi_destroy_session(osi_session_t* session)
 }
 
 /**
- * @brief Destroys a packet which was dynamically
+ * \brief Destroys a packet which was dynamically
  * allocated.
  */
 void osi_destroy_packet(packet_t* packet)
