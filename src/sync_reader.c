@@ -107,15 +107,6 @@ ssize_t sync_reader_read(sync_reader_t* reader, size_t len)
   packet.size     = size_read;
   packet.protocol = 0;
   packet.session  = NULL;
-  
-  static int t = 1;
-  
-  if (t == 1) {
-    t = 0;
-    usleep(3000000);
-  } else {
-    usleep(700000);
-  }
   notify_packet(reader, &packet);
   free(buffer);
   return (size_read);
