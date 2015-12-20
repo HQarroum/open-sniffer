@@ -97,8 +97,7 @@ ssize_t sync_reader_read(sync_reader_t* reader, size_t len)
   packet_t		packet;
   
   saddr_size = sizeof(saddr);
-  buffer     = malloc(len * sizeof(*buffer));
-  memset(buffer, 0, len * sizeof(*buffer));
+  buffer     = calloc(sizeof(*buffer), len);
   
   // Reading from the file descriptor.
   ssize_t size_read = xrecvfrom(reader->fd, buffer, len, 0, &saddr, &saddr_size);
@@ -109,6 +108,14 @@ ssize_t sync_reader_read(sync_reader_t* reader, size_t len)
   packet.protocol = 0;
   packet.session  = NULL;
   
+  static int t = 1;
+  
+  if (t == 1) {
+    t = 0;
+    usleep(3000000);
+  } else {
+    usleep(700000);
+  }
   notify_packet(reader, &packet);
   free(buffer);
   return (size_read);
