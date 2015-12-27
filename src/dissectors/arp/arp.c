@@ -19,6 +19,10 @@ const osi_dissector_t* arp_dissector_new()
   return (&arp);
 }
 
+/**
+ * \return whether this dissector handles the
+ * given packet
+ */
 int arp_dissector_handles(const packet_t* packet)
 {
   if (!packet || !packet->data
@@ -29,6 +33,10 @@ int arp_dissector_handles(const packet_t* packet)
   return (OSI_PACKET_SUPPORTED);
 }
 
+/**
+ * \brief Dumps the packet content on the
+ * standard output
+ */
 void arp_dissector_dump(const packet_t* packet)
 {
   if (!arp_dissector_handles(packet)) {
@@ -42,6 +50,10 @@ void arp_dissector_dump(const packet_t* packet)
   printf(ARP_OUTPUT_FOOTER);
 }
 
+/**
+ * \return a new packet instance without the
+ * ARP packet.
+ */
 packet_t* arp_dissector_decapsulate(const packet_t* packet)
 {
   if (!arp_dissector_handles(packet)) {
