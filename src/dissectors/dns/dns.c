@@ -333,7 +333,11 @@ int dns_dissector_handles(const packet_t* packet)
   }
   return (OSI_PACKET_SUPPORTED);
 }
- 
+
+/**
+ * \brief Dumps the packet content on the
+ * standard output
+ */
 void dns_dissector_dump(const packet_t* packet)
 {
   const dnshdr*	header;
