@@ -38,6 +38,10 @@ To illustrate the result I recorded a sniffing session while retrieving the inde
 
 ![Screencast](screencast.gif)
 
+## Plugins
+
+A simple plugin management system is available in this project which aims to be a way to add a functionality to the sniffer without mofifying any of its core code.
+
 ## Building
 
 For now, a simple Makefile is available for building the project, so you simply need to run `make`. Note that you are required to also pull the sole dependency of this project, an implementation of a circular linked list which is packaged as a submodule. The project was built and tested on a Linux 3.13 (64 bits). 
