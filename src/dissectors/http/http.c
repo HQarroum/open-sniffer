@@ -152,7 +152,11 @@ int http_dissector_handles(const packet_t* packet)
   }
   return (OSI_PACKET_SUPPORTED);
 }
- 
+
+/**
+ * \brief Dumps the packet content on the
+ * standard output
+ */
 void http_dissector_dump(const packet_t* packet)
 {
   http_parser		parser;
