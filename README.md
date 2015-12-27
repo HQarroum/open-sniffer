@@ -40,7 +40,7 @@ To illustrate the result I recorded a sniffing session while retrieving the inde
 
 ## Plugins
 
-A simple plugin management system is available in this project which aims to be a way to add a functionality to the sniffer without mofifying any of its core code.
+A simple plugin management system is available in this project which aims to be a way to add a functionality to the sniffer without mofifying any of its core code. An example of a plugin would be a presenter which will for instance show the sniffed packet into a remote web user interface, instead of the stadard output in the console.
 
 ## Building
 
