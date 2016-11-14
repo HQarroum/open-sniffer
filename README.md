@@ -3,6 +3,7 @@
 </p>
 
 # Open sniffer
+[![Build Status](https://travis-ci.org/HQarroum/open-sniffer.svg?branch=master)](https://travis-ci.org/HQarroum/open-sniffer)
 
 A POSIX utility used to sniff and dissect network packets.
 
