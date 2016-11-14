@@ -6,5 +6,8 @@ compiler:
 before_install:
   - git submodule update --init --recursive
   
+install:
+  - make -C circular-linked-list/
+ 
 script:
   - make
